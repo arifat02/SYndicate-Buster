@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2026 at 04:03 PM
+-- Generation Time: Jan 05, 2026 at 07:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,6 +37,15 @@ CREATE TABLE `batches` (
   `QR_Code_Hash` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `batches`
+--
+
+INSERT INTO `batches` (`Batch_ID`, `Parent_Batch_ID`, `Current_Owner_ID`, `Commodity_ID`, `Current_Quantity`, `Harvest_Date`, `QR_Code_Hash`) VALUES
+(100, NULL, 1, 1, 100.00, '2026-01-06', NULL),
+(101, 100, 2, 1, 100.00, '2026-01-06', NULL),
+(102, 101, 3, 1, 100.00, '2026-01-06', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +58,15 @@ CREATE TABLE `commodities` (
   `Unit_Type` varchar(10) NOT NULL,
   `Perishable` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `commodities`
+--
+
+INSERT INTO `commodities` (`Commodity_ID`, `Name`, `Unit_Type`, `Perishable`) VALUES
+(1, 'Onion', 'KG', 1),
+(2, 'Potato', 'KG', 1),
+(3, 'Miniket Rice', 'KG', 0);
 
 -- --------------------------------------------------------
 
@@ -63,6 +81,13 @@ CREATE TABLE `govt_price_cap` (
   `Max_Retail_Price` decimal(10,2) DEFAULT NULL,
   `Effective_Date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `govt_price_cap`
+--
+
+INSERT INTO `govt_price_cap` (`Cap_ID`, `Commodity_ID`, `Max_Wholesale_Price`, `Max_Retail_Price`, `Effective_Date`) VALUES
+(1, 1, 70.00, 90.00, '2026-01-06');
 
 -- --------------------------------------------------------
 
@@ -95,6 +120,15 @@ CREATE TABLE `transactions` (
   `Transaction_Date` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`Transaction_ID`, `Batch_ID`, `Seller_ID`, `Buyer_ID`, `Unit_Price`, `Total_Amount`, `Transaction_Date`) VALUES
+(1, 100, 1, 2, 40.00, 4000.00, '2026-01-06 00:08:25'),
+(2, 101, 2, 3, 55.00, 5500.00, '2026-01-06 00:13:32'),
+(3, 102, 3, 4, 110.00, 11000.00, '2026-01-06 00:14:03');
+
 -- --------------------------------------------------------
 
 --
@@ -109,6 +143,16 @@ CREATE TABLE `users` (
   `Role` enum('Farmer','Middleman','Wholesaler','Retailer','Admin') NOT NULL,
   `Trust_Score` int(11) DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`User_ID`, `Name`, `Phone`, `Location_District`, `Role`, `Trust_Score`) VALUES
+(1, 'Rahim Miah', '01711111111', 'Bogura', 'Farmer', 100),
+(2, 'Karim Traders', '01722222222', 'Bogura', 'Middleman', 100),
+(3, 'Bhai Bhai Store', '01733333333', 'Dhaka', 'Wholesaler', 80),
+(4, 'Swapno Gulshan', '01744444444', 'Dhaka', 'Retailer', 100);
 
 --
 -- Indexes for dumped tables
@@ -169,19 +213,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `batches`
 --
 ALTER TABLE `batches`
-  MODIFY `Batch_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Batch_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `commodities`
 --
 ALTER TABLE `commodities`
-  MODIFY `Commodity_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Commodity_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `govt_price_cap`
 --
 ALTER TABLE `govt_price_cap`
-  MODIFY `Cap_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cap_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `syndicate_blacklist`
@@ -193,13 +237,13 @@ ALTER TABLE `syndicate_blacklist`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `Transaction_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Transaction_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
