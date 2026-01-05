@@ -1,0 +1,10 @@
+SELECT 
+    t.Transaction_ID,
+    Seller.Name as Seller,
+    Buyer.Name as Buyer,
+    t.Unit_Price,
+    b.Parent_Batch_ID as Source_Batch
+FROM Transactions t
+JOIN Users Seller ON t.Seller_ID = Seller.User_ID
+JOIN Users Buyer ON t.Buyer_ID = Buyer.User_ID
+JOIN Batches b ON t.Batch_ID = b.Batch_ID;
