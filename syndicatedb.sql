@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `batche`
 --
 
-CREATE TABLE `batche` (
+CREATE TABLE `batch` (
   `batch_id` int(11) NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `current_owner_id` int(11) DEFAULT NULL,
