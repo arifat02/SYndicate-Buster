@@ -1,0 +1,249 @@
+.sub_title {
+    color: #1f2c29;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputArea {
+    color: #676666;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.inputAreaText {
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+.filterText {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.linktxt {
+    font-size: 12px;
+    color: #214332;
+    text-align: center;
+    text-decoration: none;
+}
+
+.tital {
+    color: #214332;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.hrline {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.GreenTextLarge {
+    color: #214332;
+    margin-bottom: 5px;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.tableBoldText {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.tablesmallText {
+    color: #666;
+    font-size: 13px;
+}
+
+.textMedium {
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.greenText {
+    color: #155724;
+}
+
+.redText {
+    color: #721c24;
+}
+
+.yellowText {
+    color: #856404;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.suspended {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.banned {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.blacklisted {
+    background: #e6ccff;
+    color: #4a235a;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-upcoming {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-expired {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.region-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.severity-badge {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.severity-low {
+    background: #d4edda;
+    color: #155724;
+}
+
+.severity-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.severity-high {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.severity-critical {
+    background: #721c24;
+    color: white;
+}
+
+.trust-score {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.trust-excellent {
+    color: #28a745;
+}
+
+.trust-good {
+    color: #ffc107;
+}
+
+.trust-poor {
+    color: #dc3545;
+}
+
+.under_review {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.action-number {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.action-number.pending {
+    color: #ff9800;
+}
+
+.action-number.active {
+    color: #4CAF50;
+}
+
+.action-number.suspended {
+    color: #ff9800;
+}
+
+.action-number.banned {
+    color: #f44336;
+}
+
+.action-number.blacklisted {
+    color: #9c27b0;
+}
+
+.listing-status {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-active {
+    background: #d3f9d8;
+    color: #2b8a3e;
+}
+
+.status-partial {
+    background: #fff3bf;
+    color: #e67700;
+}
